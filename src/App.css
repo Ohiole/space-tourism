@@ -17,7 +17,11 @@
     }
 
     .add-before ul li p{
-        @apply 
+        @apply font-bold
+    }
+
+    .add-before ul li p span{
+        @apply font-light
     }
 
     .add-before ul li:hover .line-under{
