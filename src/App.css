@@ -13,11 +13,11 @@
 
 @layer base{
     .add-before ul li{
-        @apply relative flex flex-col justify-center items-center cursor-pointer py-8
+        @apply relative flex flex-col justify-center items-center cursor-pointer py-8 text-lg
     }
 
     .add-before ul li p{
-        @apply font-bold
+        @apply font-bold flex items-center gap-4 tracking-widest
     }
 
     .add-before ul li p span{
