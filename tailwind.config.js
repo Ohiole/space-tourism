@@ -4,6 +4,9 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
+    screens: {
+      'lg': '800px'
+    },
     extend: {
       colors: {
         'header-bg': 'rgba(255, 255, 255, 0.1)',
