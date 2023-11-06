@@ -5,6 +5,7 @@ module.exports = {
   ],
   theme: {
     screens: {
+      'xl': '1000px',
       'lg': '800px',
       'md': '525px',
     },
@@ -18,7 +19,10 @@ module.exports = {
         'sans': 'Barlow Condensed, sans-serif',
         'serif': 'Bellefair, serif',
         'mono': 'Barlow, sans-serif'
-      }
+      }, 
+      spacing: {
+        '128': '56rem'
+      },
     },
   },
   plugins: [],

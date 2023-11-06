@@ -11,7 +11,28 @@
     left: -50%;
 }
 
-@media screen and (max-width: 1270px){
+@media screen and (max-width: 1450px){
+    .add-before::before{
+        width: 45%;
+        left: -40%;
+    }
+}
+
+@media screen and (max-width: 1350px){
+    .add-before::before{
+        width: 35%;
+        left: -30%;
+    }
+}
+
+@media screen and (max-width: 1250px){
+    .add-before::before{
+        width: 25%;
+        left: -20%;
+    }
+}
+
+@media screen and (max-width: 1170px){
     .add-before::before{
         opacity: 0;
     }
@@ -19,14 +40,14 @@
 
 @layer base{
     .add-before ul li{
-        @apply relative flex flex-col justify-center items-center cursor-pointer py-8 text-base lg:text-lg
+        @apply relative flex flex-col md:justify-center md:items-center cursor-pointer py-2 md:py-8 text-base lg:text-lg ml-4 md:ml-auto
     }
 
     .add-before ul li p{
-        @apply font-bold flex items-center gap-4 tracking-widest
+        @apply font-bold flex gap-4 tracking-widest w-full
     }
 
-    .add-before ul li p span{
+    .add-before ul li p span.nav{
         @apply font-light
     }
 
@@ -35,7 +56,7 @@
     }
 
     .add-before ul li .line-under{
-        @apply absolute bottom-0 w-full h-1 transition-all duration-300 ease-in-out      
+        @apply absolute bottom-0 md:w-full w-1 h-full md:h-1 transition-all duration-300 ease-in-out right-0    
     }
 
     .active-line{
