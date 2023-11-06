@@ -1,11 +1,13 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Logo from '../assets/shared/logo.svg';
 import { Link } from 'react-router-dom';
 import MenuBar from '../assets/shared/icon-hamburger.svg';
 import CloseMenu from '../assets/shared/icon-close.svg';
+import { ContextPage } from '../Context/ContextPage';
 
 function Header() {
   const [menu, setMenu] = useState(false);
+  const {setPageBg, pageBg} = useContext(ContextPage)
 
   const toggleMenu = () => {
     setMenu(!menu)
@@ -17,30 +19,30 @@ function Header() {
         <img src={menu ? CloseMenu : MenuBar} alt="The hamburger and close menu icon" className='md:hidden z-40 cursor-pointer mr-4' onClick={toggleMenu}/>
         <nav className={`w-2/3 md:w-4/5 lg:w-[42rem] xl:w-128 bg-header-bg backdrop-blur-2xl md:backdrop-blur-lg md:flex md:items-center pt-24 md:pt-0 md:justify-center add-before fixed md:relative transition-all md:right-0 duration-500 ease-in-out top-0 h-full ${menu ? 'right-0' : '-right-96'}`}>
           <ul className='w-full text-white flex flex-col md:flex-row md:ml-4 gap-4 md:w-auto md:gap-10'>
-            <li>
-              <Link to='/'>
+            <Link to='/' onClick={() => setPageBg('Home')}>
+              <li>
                 <p><span className='block md:hidden lg:block'>00</span> <span className='nav'>HOME</span></p>
-                <div className='line-under active-line'></div>
-              </Link>
-            </li>
-            <li>
-              <Link to='/destination'>
+                <div className={`line-under ${pageBg === 'Home' ? 'active-line' : ''}`}></div>
+              </li>
+            </Link>
+            <Link to='/destination' onClick={() => setPageBg('Destination')}>
+              <li>
                 <p><span className='block md:hidden lg:block'>01</span> <span className='nav'>DESTINATION</span></p>
-                <div className='line-under'></div>
-              </Link>
-            </li>
-            <li>
-              <Link to='/crew'>
+                <div className={`line-under ${pageBg === 'Destination' ? 'active-line' : ''}`}></div>
+              </li>
+            </Link>
+            <Link to='/crew' onClick={() => setPageBg('Crew')}>
+              <li>
                 <p><span className='block md:hidden lg:block'>02</span> <span className='nav'>CREW</span></p>
-                <div className='line-under'></div>
-              </Link>
-            </li>
-            <li>
-              <Link to='/technology'>
+                <div className={`line-under ${pageBg === 'Crew' ? 'active-line' : ''}`}></div>
+              </li>
+            </Link>
+            <Link to='/technology' onClick={() => setPageBg('Technology')}>
+              <li>
                 <p><span className='block md:hidden lg:block'>03</span> <span className='nav'>TECHNOLOGY</span></p>
-                <div className='line-under'></div>
-              </Link>
-            </li>
+                <div className={`line-under ${pageBg === 'Technology' ? 'active-line' : ''}`}></div>
+              </li>
+            </Link>
           </ul>
         </nav>
     </header>

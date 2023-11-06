@@ -2,7 +2,7 @@ import React from 'react'
 
 function Home() {
   return (
-    <main className='flex flex-col justify-end w-full h-3/4 mt-10 lg:mt-0'>
+    <main className='flex flex-col w-full mt-10 lg:mt-0 lg:absolute lg:bottom-10'>
         <section className='flex flex-col h-full lg:h-auto lg:flex-row w-full lg:justify-evenly items-center'>
             <section className='basis-1/2 flex flex-col lg:items-start items-center'>
                 <h3 className='text-new-purple text-xl md:text-2xl tracking-widest'>SO, YOU WANT TO TRAVEL TO</h3>
