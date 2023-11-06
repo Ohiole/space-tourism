@@ -62,4 +62,16 @@
     .active-line{
         @apply bg-white
     }
+
+    .listOfDest li{
+        @apply flex flex-col justify-between items-center cursor-pointer gap-2 text-lg
+    }
+
+    .listOfDest li .lineDest{
+        @apply w-full h-1
+    }
+
+    .listOfDest li:hover .lineDest{
+        @apply bg-link-hover
+    }
 }
