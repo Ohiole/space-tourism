@@ -18,6 +18,7 @@ import TechBg from './assets/technology/background-technology-desktop.jpg';
 import TechBgTablet from './assets/technology/background-technology-tablet.jpg';
 import TechBgMobile from './assets/technology/background-technology-mobile.jpg';
 import Crew from './pages/Crew';
+import Technology from './pages/Technology';
 
 function App() {
   const [pageBg, setPageBg] = useState('Home');
@@ -37,6 +38,7 @@ function App() {
           <Route path='/' Component={Home} />
           <Route path='/destination' exact Component={Destination} />
           <Route path='/crew' exact Component={Crew} />
+          <Route path='/technology' exact Component={Technology} />
         </Routes>
       </ContextPage.Provider>
     </div>
