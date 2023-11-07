@@ -25,7 +25,7 @@ function App() {
   return (
     <div className="App relative min-h-screen w-full">
       <ContextPage.Provider value={{setPageBg, pageBg}}>
-        <img src={pageBg === 'Home' ? HomeBg : pageBg === 'Destination' ? DestBg : pageBg === 'Crew' ? CrewBg : pageBg === 'Technology' ? TechBg : HomeBg} alt='Desktop Page Background' className='w-full h-full absolute inset-0 -z-10 hidden lg:block'/>
+        <img src={pageBg === 'Home' ? HomeBg : pageBg === 'Destination' ? DestBg : pageBg === 'Crew' ? CrewBg : pageBg === 'Technology' ? TechBg : ''} alt='Desktop Page Background' className='w-full h-full absolute inset-0 -z-10 hidden lg:block'/>
         <img src={pageBg === 'Home' ? HomeBgTablet : pageBg === 'Destination' ? DestBgTablet : pageBg === 'Crew' ? CrewBgTablet : pageBg === 'Technology' ? TechBgTablet : HomeBgTablet} alt='Tablet Page Background' className='w-full h-full absolute inset-0 -z-10 hidden lg:hidden md:block'/>
         <img src={pageBg === 'Home' ? HomeBgMobile : pageBg === 'Destination' ? DestBgMobile : pageBg === 'Crew' ? CrewBgMobile : pageBg === 'Technology' ? TechBgMobile : HomeBgMobile} alt='Desktop Page Background' className='w-full h-full absolute inset-0 -z-10 block md:hidden'/>
         <Header />
