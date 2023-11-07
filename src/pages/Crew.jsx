@@ -67,22 +67,22 @@ function Crew() {
 
   return (
     <section>
-        <h1 className='pl-2 md:pl-10 lg:pl-[10rem] text-2xl lg:text-3xl flex items-center gap-4'><span className='font-bold text-white opacity-50'>02</span><span className='tracking-widest text-white'>MEET YOUR CREW</span></h1>
-        <section className='w-full px-[10rem] flex items-center justify-between gap-4 outline-none' onKeyDown={handleKeyDown} tabIndex={0} ref={slideRef}>
-            <section className='w-1/2'>
+        <h1 className='pl-2 md:pl-10 lg:pl-[3rem] xl:pl-[10rem] text-2xl lg:text-3xl flex items-center gap-4'><span className='font-bold text-white opacity-50'>02</span><span className='tracking-widest text-white'>MEET YOUR CREW</span></h1>
+        <section className='w-full px-[3rem] 2xl:px-[10rem] flex lg:flex-row md:flex-col flex-col-reverse lg:mt-0 mt-10 items-center justify-between gap-8 xl:gap-4 outline-none' onKeyDown={handleKeyDown} tabIndex={0} ref={slideRef}>
+            <section className=' w-full lg:w-1/2 flex flex-col justify-center lg:justify-start items-center lg:items-start'>
                 <section>
-                    <h2 className='font-serif text-crew-title text-3xl'>{currMember.title}</h2>
-                    <h1 className='mt-5 font-serif text-white text-5xl'>{currMember.name}</h1>
-                    <p className='mt-10 text-left text-base font-mono text-new-purple w-96'>{currMember.info}</p>
+                    <h2 className='font-serif text-crew-title text-xl md:text-2xl lg:text-left text-center xl:text-3xl'>{currMember.title}</h2>
+                    <h1 className='mt-5 w-full font-serif text-white text-2xl md:text-3xl lg:text-left text-center xl:text-5xl'>{currMember.name}</h1>
+                    <p className='mt-5 lg:mt-10 lg:text-left text-center text-base font-mono text-new-purple lg:w-96 w-full'>{currMember.info}</p>
                 </section>
-                <ul className='crewList flex w-full items-center mt-20 gap-4'>
+                <ul className='crewList flex lg:w-full items-center mt-8 lg:mt-20 gap-4'>
                     <li className={currMember === crewMembers[0] ? 'active-list' : ''} onClick={() => setCurrMember(crewMembers[0])}></li>
                     <li className={currMember === crewMembers[1] ? 'active-list' : ''} onClick={() => setCurrMember(crewMembers[1])}></li>
                     <li className={currMember === crewMembers[2] ? 'active-list' : ''} onClick={() => setCurrMember(crewMembers[2])}></li>
                     <li className={currMember === crewMembers[3] ? 'active-list' : ''} onClick={() => setCurrMember(crewMembers[3])}></li>
                 </ul>
             </section>
-            <img src={currMember.img} alt="Crew Member AVI" className='h-[38rem]'/>
+            <img src={currMember.img} alt="Crew Member AVI" className='w-full md:h-auto md:w-1/2 xl:h-[38rem] xl:w-auto border-b-2 md:border-b-0 border-header-bg md:px-0 px-10'/>
         </section>
     </section>
   )

@@ -80,7 +80,7 @@ html{
     }
 
     .crewList li{
-        @apply w-4 h-4 rounded-full bg-header-bg cursor-pointer
+        @apply md:w-4 md:h-4 w-2 h-2 rounded-full bg-header-bg cursor-pointer 
     }
 
     .crewList li.active-list{
