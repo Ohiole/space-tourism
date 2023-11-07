@@ -1,5 +1,5 @@
 import './App.css';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { ContextPage } from './Context/ContextPage';
 import Header from './components/Header';
@@ -22,10 +22,6 @@ import Technology from './pages/Technology';
 
 function App() {
   const [pageBg, setPageBg] = useState('Home');
-
-  useEffect(() => {
-    console.log(pageBg);
-  }, [pageBg])
 
   return (
     <div className="App relative min-h-screen w-full">

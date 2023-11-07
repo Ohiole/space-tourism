@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState, useContext, useRef } from 'react';
 import Moon from '../assets/destination/image-moon.png';
 import Mars from '../assets/destination/image-mars.png';
 import Europa from '../assets/destination/image-europa.png';
@@ -40,7 +40,31 @@ const data = [
 function Destination() {
     const [destination, setDestination] = useState("Moon");
     const [currentData, setCurrentData] = useState(data[0]);
-    const {setPageBg} = useContext(ContextPage)
+    const [currDestination, setCurrDestination] = useState(0)
+    const {setPageBg} = useContext(ContextPage);
+    const pageViewRef = useRef(null);
+
+    const changeDestination = (e) => {
+        if (e.key === 'ArrowRight'){
+            setCurrDestination(prev => prev + 1);
+        } else if (e.key === 'ArrowLeft'){
+            setCurrDestination(prev => prev - 1);
+        }
+
+        if (currDestination === 0) {
+            setDestination('Moon')
+        } else if (currDestination === 1) {
+            setDestination('Mars')
+        } else if (currDestination === 2){
+            setDestination('Europa')
+        } else if (currDestination === 3){
+            setDestination('Titan')
+        } else if (currDestination > 3){
+            setCurrDestination(0);
+        } else if (currDestination < 0){
+            setCurrDestination(3)
+        }
+    }
 
     useEffect(() => {
         switch (destination) {
@@ -61,16 +85,18 @@ function Destination() {
         }
 
         setPageBg('Destination')
-    }, [destination, setPageBg])
+
+        pageViewRef.current.focus();
+    }, [destination, setPageBg, currDestination])
 
   return (
     <section className='w-full mt-10'>
         <h1 className='pl-2 md:pl-10 lg:pl-[10rem] text-2xl lg:text-3xl flex items-center gap-4'><span className='font-bold text-white opacity-50'>01</span><span className='tracking-widest text-white'>PICK YOUR DESTINATION</span></h1>
-        <section className='mt-5 flex lg:flex-row flex-col items-center justify-between px-10 lg:px-[2rem] xl:px-[5rem] gap-2 xl:gap-4'>
+        <section className='mt-5 flex lg:flex-row flex-col items-center justify-between px-10 lg:px-[2rem] xl:px-[5rem] gap-2 xl:gap-4 outline-none' ref={pageViewRef} tabIndex={0} onKeyDown={changeDestination}>
             <img src={currentData.image} alt="The Destination" className='w-1/2 xl:w-auto' />
             <section className='w-full lg:w-1/2 flex flex-col justify-center items-center lg:justify-start lg:items-start my-8 lg:my-0'>
                 <ul className='listOfDest flex items-center gap-10 text-new-purple'>
-                    <li onClick={() => setDestination("Moon")}>
+                    <li onClick={() => setDestination('Moon')}>
                         <p className={destination === 'Moon' ? 'text-white' : ''}>MOON</p>
                         <div className={`lineDest ${ destination === 'Moon' ? 'active-line' : ''}`}></div>
                     </li>
