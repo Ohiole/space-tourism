@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Moon from '../assets/destination/image-moon.png';
 import Mars from '../assets/destination/image-mars.png';
 import Europa from '../assets/destination/image-europa.png';
@@ -37,43 +37,65 @@ const data = [
 ]
 
 function Destination() {
+    const [destination, setDestination] = useState("Moon");
+    const [currentData, setCurrentData] = useState(data[0]);
+
+    useEffect(() => {
+        switch (destination) {
+            case "Moon":
+                setCurrentData(data[0])
+                break;
+            case "Mars":
+                setCurrentData(data[1])
+                break;
+            case "Europa":
+                setCurrentData(data[2])
+                break;
+            case "Titan":
+                setCurrentData(data[3])
+                break;
+            default: setCurrentData(data[0])
+                break;
+        }
+    }, [destination])
+
   return (
     <section className='w-full mt-10'>
-        <h1 className='pl-[10rem] text-3xl flex items-center gap-4'><span className='font-bold text-white opacity-50'>01</span><span className='tracking-widest text-white'>PICK YOUR DESTINATION</span></h1>
-        <section className='mt-5 flex items-center justify-between px-[10rem]'>
-            <img src={data[0].image} alt="The Destination" />
-            <section className='w-1/2'>
+        <h1 className='pl-2 md:pl-10 lg:pl-[10rem] text-2xl lg:text-3xl flex items-center gap-4'><span className='font-bold text-white opacity-50'>01</span><span className='tracking-widest text-white'>PICK YOUR DESTINATION</span></h1>
+        <section className='mt-5 flex lg:flex-row flex-col items-center justify-between px-10 lg:px-[2rem] xl:px-[5rem] gap-2 xl:gap-4'>
+            <img src={currentData.image} alt="The Destination" className='w-1/2 xl:w-auto' />
+            <section className='w-full lg:w-1/2 flex flex-col justify-center items-center lg:justify-start lg:items-start my-8 lg:my-0'>
                 <ul className='listOfDest flex items-center gap-10 text-new-purple'>
-                    <li>
-                        <p>MOON</p>
-                        <div className="lineDest active-line"></div>
+                    <li onClick={() => setDestination("Moon")}>
+                        <p className={destination === 'Moon' ? 'text-white' : ''}>MOON</p>
+                        <div className={`lineDest ${ destination === 'Moon' ? 'active-line' : ''}`}></div>
                     </li>
-                    <li>
-                        <p>MARS</p>
-                        <div className="lineDest"></div>
+                    <li onClick={() => setDestination("Mars")}>
+                        <p className={destination === 'Mars' ? 'text-white' : ''}>MARS</p>
+                        <div className={`lineDest ${ destination === 'Mars' ? 'active-line' : ''}`}></div>
                     </li>
-                    <li>
-                        <p>EUROPA</p>
-                        <div className="lineDest"></div>
+                    <li onClick={() => setDestination("Europa")}>
+                        <p className={destination === 'Europa' ? 'text-white' : ''}>EUROPA</p>
+                        <div className={`lineDest ${ destination === 'Europa' ? 'active-line' : ''}`}></div>
                     </li>
-                    <li>
-                        <p>TITAN</p>
-                        <div className="lineDest"></div>
+                    <li onClick={() => setDestination("Titan")}>
+                        <p className={destination === 'Titan' ? 'text-white' : ''}>TITAN</p>
+                        <div className={`lineDest ${ destination === 'Titan' ? 'active-line' : ''}`}></div>
                     </li>
                 </ul>
                 <section className='mt-8'>
                     <section>
-                        <h1 className='text-white font-serif text-8xl'>MOON</h1>
-                        <p className='w-96 text-base mt-5 text-new-purple font-mono'>{data[0].text}</p>
+                        <h1 className='text-white font-serif text-6xl text-center lg:text-left lg:text-8xl'>{currentData.name}</h1>
+                        <p className='w-full sm:w-96 text-base mt-5 text-new-purple font-mono text-center lg:text-left'>{currentData.text}</p>
                     </section>
-                    <section className='mt-8 pt-8 border-t-2 w-96 border-line-color flex items-center gap-10'>
-                        <section>
+                    <section className='mt-8 pt-8 border-t-2 w-full lg:w-96 border-line-color flex flex-col md:flex-row justify-center lg:justify-start items-center gap-10'>
+                        <section className='flex flex-col justify-center items-center'>
                             <p className='text-xl text-new-purple font-light tracking-widest'>AVG. DISTANCE</p>
-                            <h2 className='text-3xl text-white font-serif mt-2'>{data[0].avgDist}</h2>
+                            <h2 className='text-2xl lg:text-3xl text-white font-serif mt-2'>{currentData.avgDist}</h2>
                         </section>
-                        <section>
+                        <section className='flex flex-col justify-center items-center'>
                             <p className='text-xl text-new-purple font-light tracking-widest'>EST. TRAVEL TIME</p>
-                            <h2 className='text-3xl text-white font-serif mt-2'>{data[0].travelTime}</h2>
+                            <h2 className='text-2xl lg:text-3xl text-white font-serif mt-2'>{currentData.travelTime}</h2>
                         </section>
                     </section>
                 </section>
