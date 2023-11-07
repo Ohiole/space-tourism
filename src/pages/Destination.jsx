@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import Moon from '../assets/destination/image-moon.png';
 import Mars from '../assets/destination/image-mars.png';
 import Europa from '../assets/destination/image-europa.png';
 import Titan from '../assets/destination/image-titan.png';
+import { ContextPage } from '../Context/ContextPage';
 
 
 const data = [
@@ -39,6 +40,7 @@ const data = [
 function Destination() {
     const [destination, setDestination] = useState("Moon");
     const [currentData, setCurrentData] = useState(data[0]);
+    const {setPageBg} = useContext(ContextPage)
 
     useEffect(() => {
         switch (destination) {
@@ -57,7 +59,9 @@ function Destination() {
             default: setCurrentData(data[0])
                 break;
         }
-    }, [destination])
+
+        setPageBg('Destination')
+    }, [destination, setPageBg])
 
   return (
     <section className='w-full mt-10'>

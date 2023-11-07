@@ -1,8 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useContext } from 'react';
 import Douglas from '../assets/crew/image-douglas-hurley.png';
 import Mark from '../assets/crew/image-mark-shuttleworth.png';
 import Victor from '../assets/crew/image-victor-glover.png';
 import Ansari from '../assets/crew/image-anousheh-ansari.png';
+import { ContextPage } from '../Context/ContextPage';
 
 const crewMembers = [
     {
@@ -32,6 +33,7 @@ const crewMembers = [
 ]
 
 function Crew() {
+    const {setPageBg} = useContext(ContextPage)
     const [currMember, setCurrMember] = useState(crewMembers[0]);
     const [currSlide, setCurrSlide] = useState(0);
     const slideRef = useRef(null);
@@ -50,8 +52,10 @@ function Crew() {
         } else if(currSlide < 0){
             setCurrSlide(3)
         }
-        slideRef.current.focus()
-    }, [currSlide])
+        slideRef.current.focus();
+
+        setPageBg('Crew')
+    }, [currSlide, setPageBg])
 
     const handleKeyDown = (e) => {
         if (e.key === 'ArrowRight') {
