@@ -16,7 +16,8 @@ module.exports = {
         'link-hover': 'rgba(255, 255, 255, 0.6)',
         'new-purple': '#D0D6F9',
         'line-color': '#383B4B',
-        'crew-title': 'rgba(255, 255, 255, 0.5042)'
+        'crew-title': 'rgba(255, 255, 255, 0.5042)',
+        'number': '#0B0D17'
       },
       fontFamily: {
         'sans': 'Barlow Condensed, sans-serif',

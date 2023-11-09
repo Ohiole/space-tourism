@@ -86,4 +86,12 @@ html{
     .crewList li.active-list{
         @apply bg-white
     }
+
+    .tech-number p{ 
+        @apply cursor-pointer w-16 h-16 rounded-full border-header-bg border-2 mb-4 flex items-center justify-center font-serif text-3xl text-white transition-all ease-in-out duration-200
+    }
+
+    .tech-number p.active{
+        @apply bg-white text-number border-none transition-all ease-in-out duration-200
+    }
 }
