@@ -49,21 +49,21 @@ function Technology() {
   return (
     <section className='w-full'>
       <h1 className='pl-2 md:pl-10 lg:pl-[3rem] xl:pl-[10rem] text-2xl lg:text-3xl flex items-center gap-4'><span className='font-bold text-white opacity-50'>03</span><span className='tracking-widest text-white'>SPACE LAUNCH 101</span></h1>
-      <section className='w-full flex mt-5 items-center gap-4 justify-between pl-[10rem]'>
-        <section className='w-1/2 flex items-start gap-12 justify-between'>
-          <section className='tech-number'>
+      <section className='w-full flex flex-col-reverse lg:flex-row mt-5 items-center gap-4 justify-between pl-0 lg:pl-[3rem] xl:pl-[5rem] 2xl:pl-[10rem]'>
+        <section className='w-full lg:w-1/2 flex flex-col lg:flex-row items-center lg:items-start gap-8 xl:gap-12 justify-center lg:justify-between'>
+          <section className='tech-number flex lg:flex-col lg:mt-0 mt-4'>
             <p onClick={() => setTech(techData[0])} className={screen === 1 ? 'active' : ''}>1</p>
             <p onClick={() => setTech(techData[1])} className={screen === 2 ? 'active' : ''}>2</p>
             <p onClick={() => setTech(techData[2])} className={screen === 3 ? 'active' : ''}>3</p>
           </section>
-          <section>
-            <p className='text-new-purple text-base tracking-widest'>THE TERMINOLOGY...</p>
-            <h1 className='mt-3 text-5xl font-serif text-white'>{tech.heading}</h1>
-            <p className='font-mono text-new-purple mt-5 w-2/3'>{tech.text}</p>
+          <section className='mb-10 lg:mb-0 w-full lg:w-auto lg:px-0 px-4'>
+            <p className='text-new-purple text-base tracking-widest lg:text-left text-center'>THE TERMINOLOGY...</p>
+            <h1 className='mt-3 text-3xl 2xl:text-5xl font-serif text-white lg:text-left text-center'>{tech.heading}</h1>
+            <p className='font-mono text-new-purple mt-5 w-full 2xl:w-2/3 lg:text-left text-center'>{tech.text}</p>
           </section>
         </section>
-        <img src={tech.portraitImg} alt="Technology" />
-        <img src={tech.landscapeImg} alt="Technology" className='hidden' />
+        <img src={tech.portraitImg} alt="Technology" className='hidden lg:block xl:w-auto w-1/2' />
+        <img src={tech.landscapeImg} alt="Technology" className='lg:hidden w-full' />
       </section>
     </section>
   )

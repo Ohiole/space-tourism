@@ -88,7 +88,7 @@ html{
     }
 
     .tech-number p{ 
-        @apply cursor-pointer w-16 h-16 rounded-full border-header-bg border-2 mb-4 flex items-center justify-center font-serif text-3xl text-white transition-all ease-in-out duration-200
+        @apply cursor-pointer w-12 lg:w-16 h-12 lg:h-16 rounded-full border-header-bg border-2 mb-4 flex items-center justify-center font-serif text-base lg:text-3xl text-white transition-all ease-in-out duration-200 lg:mx-0 mx-2
     }
 
     .tech-number p.active{
