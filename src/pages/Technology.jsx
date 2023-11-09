@@ -48,8 +48,8 @@ function Technology() {
   
   return (
     <section className='w-full'>
-      <h1 className='pl-2 md:pl-10 lg:pl-[3rem] xl:pl-[10rem] text-2xl lg:text-3xl flex items-center gap-4'><span className='font-bold text-white opacity-50'>03</span><span className='tracking-widest text-white'>SPACE LAUNCH 101</span></h1>
-      <section className='w-full flex flex-col-reverse lg:flex-row mt-5 items-center gap-4 justify-between pl-0 lg:pl-[3rem] xl:pl-[5rem] 2xl:pl-[10rem]'>
+      <h1 className='pl-2 md:pl-10 lg:pl-[3rem] xl:pl-[10rem] text-2xl lg:text-3xl flex items-center gap-4 animated-class opacity-0'><span className='font-bold text-white opacity-50'>03</span><span className='tracking-widest text-white'>SPACE LAUNCH 101</span></h1>
+      <section className='w-full flex flex-col-reverse lg:flex-row mt-5 items-center gap-4 justify-between pl-0 lg:pl-[3rem] xl:pl-[5rem] 2xl:pl-[10rem] animated-class opacity-0'>
         <section className='w-full lg:w-1/2 flex flex-col lg:flex-row items-center lg:items-start gap-8 xl:gap-12 justify-center lg:justify-between'>
           <section className='tech-number flex lg:flex-col lg:mt-0 mt-4'>
             <p onClick={() => setTech(techData[0])} className={screen === 1 ? 'active' : ''}>1</p>
@@ -62,8 +62,8 @@ function Technology() {
             <p className='font-mono text-new-purple mt-5 w-full 2xl:w-2/3 lg:text-left text-center'>{tech.text}</p>
           </section>
         </section>
-        <img src={tech.portraitImg} alt="Technology" className='hidden lg:block xl:w-auto w-1/2' />
-        <img src={tech.landscapeImg} alt="Technology" className='lg:hidden w-full' />
+        <img src={tech.portraitImg} alt="Technology" className='hidden lg:block xl:w-auto w-1/2 animated-down opacity-0' />
+        <img src={tech.landscapeImg} alt="Technology" className='lg:hidden w-full animated-down opacity-0' />
       </section>
     </section>
   )

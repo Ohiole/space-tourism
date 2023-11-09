@@ -66,10 +66,10 @@ function Destination() {
 
   return (
     <section className='w-full mt-10'>
-        <h1 className='pl-2 md:pl-10 lg:pl-[10rem] text-2xl lg:text-3xl flex items-center gap-4'><span className='font-bold text-white opacity-50'>01</span><span className='tracking-widest text-white'>PICK YOUR DESTINATION</span></h1>
+        <h1 className='pl-2 md:pl-10 lg:pl-[10rem] text-2xl lg:text-3xl flex items-center gap-4 animated-class opacity-0'><span className='font-bold text-white opacity-50'>01</span><span className='tracking-widest text-white'>PICK YOUR DESTINATION</span></h1>
         <section className='mt-5 flex lg:flex-row flex-col items-center justify-between px-10 lg:px-[2rem] xl:px-[5rem] gap-2 xl:gap-4 outline-none'>
-            <img src={currentData.image} alt="The Destination" className='w-1/2 xl:w-auto' />
-            <section className='w-full lg:w-1/2 flex flex-col justify-center items-center lg:justify-start lg:items-start my-8 lg:my-0'>
+            <img src={currentData.image} alt="The Destination" className='w-1/2 xl:w-auto animated-down opacity-0' />
+            <section className='w-full lg:w-1/2 flex flex-col justify-center items-center lg:justify-start lg:items-start my-8 lg:my-0 animated-class opacity-0'>
                 <ul className='listOfDest flex items-center gap-10 text-new-purple'>
                     <li onClick={() => setDestination('Moon')}>
                         <p className={destination === 'Moon' ? 'text-white' : ''}>MOON</p>

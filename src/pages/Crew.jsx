@@ -67,9 +67,9 @@ function Crew() {
 
   return (
     <section>
-        <h1 className='pl-2 md:pl-10 lg:pl-[3rem] xl:pl-[10rem] text-2xl lg:text-3xl flex items-center gap-4'><span className='font-bold text-white opacity-50'>02</span><span className='tracking-widest text-white'>MEET YOUR CREW</span></h1>
+        <h1 className='pl-2 md:pl-10 lg:pl-[3rem] xl:pl-[10rem] text-2xl lg:text-3xl flex items-center gap-4 animated-class opacity-0'><span className='font-bold text-white opacity-50'>02</span><span className='tracking-widest text-white'>MEET YOUR CREW</span></h1>
         <section className='w-full px-[3rem] 2xl:px-[10rem] flex lg:flex-row md:flex-col flex-col-reverse lg:mt-0 mt-10 items-center justify-between gap-8 xl:gap-4 outline-none' onKeyDown={handleKeyDown} tabIndex={0} ref={slideRef}>
-            <section className=' w-full lg:w-1/2 flex flex-col justify-center lg:justify-start items-center lg:items-start'>
+            <section className=' w-full lg:w-1/2 flex flex-col justify-center lg:justify-start items-center lg:items-start animated-class opacity-0'>
                 <section>
                     <h2 className='font-serif text-crew-title text-xl md:text-2xl lg:text-left text-center xl:text-3xl'>{currMember.title}</h2>
                     <h1 className='mt-5 w-full font-serif text-white text-2xl md:text-3xl lg:text-left text-center xl:text-5xl'>{currMember.name}</h1>
@@ -82,7 +82,7 @@ function Crew() {
                     <li className={currMember === crewMembers[3] ? 'active-list' : ''} onClick={() => setCurrMember(crewMembers[3])}></li>
                 </ul>
             </section>
-            <img src={currMember.img} alt="Crew Member AVI" className='w-full md:h-auto md:w-1/2 xl:h-[38rem] xl:w-auto border-b-2 md:border-b-0 border-header-bg md:px-0 px-10'/>
+            <img src={currMember.img} alt="Crew Member AVI" className='w-full md:h-auto md:w-1/2 xl:h-[38rem] xl:w-auto border-b-2 md:border-b-0 border-header-bg md:px-0 px-10 animated-down opacity-0'/>
         </section>
     </section>
   )

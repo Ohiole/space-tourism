@@ -4,6 +4,37 @@
 
 html{
     scroll-behavior: smooth;
+    outline: none;
+}
+
+.animated-class{
+    animation: fadeIn 2s ease-in-out 200ms forwards;
+}
+
+.animated-down{
+    animation: fadeDown 2s ease-in-out 200ms forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-1000px);
+    }
+    to{
+        opacity: 1;
+        transform: translate(0px);
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-1000px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
 }
 
 .add-before::before{
